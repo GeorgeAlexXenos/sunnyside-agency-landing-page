@@ -438,26 +438,26 @@ main a:active:before {
 
   main .item1 {
     grid-area: item1;
-    background-image: url(/images/desktop/image-transform.jpg);
+    background-image: url(./images/desktop/image-transform.jpg);
   }
   main .item2 {
     grid-area: item2;
   }
   main .item3 {
     grid-area: item3;
-    background-image: url(/images/desktop/image-stand-out.jpg);
+    background-image: url(./images/desktop/image-stand-out.jpg);
   }
   main .item4 {
     grid-area: item4;
   }
   main .item5 {
     grid-area: item5;
-    background-image: url(/images/desktop/image-graphic-design.jpg);
+    background-image: url(./images/desktop/image-graphic-design.jpg);
     text-align: center;
   }
   main .item6 {
     grid-area: item6;
-    background-image: url(/images/desktop/image-photography.jpg);
+    background-image: url(./images/desktop/image-photography.jpg);
     text-align: center;
   }
   main .item5 p {
