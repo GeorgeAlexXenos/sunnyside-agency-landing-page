@@ -42,10 +42,12 @@ li {
 li a {
   text-decoration: none;
   font-family: "Barlow", sans-serif;
+  transition: all 0.25s;
 }
 .navbar li a:hover {
   color: var(--softRed);
 }
+
 /* ======================= */
 /* ======================= */
 
@@ -78,14 +80,17 @@ header {
   text-align: center;
 }
 .arrow-header {
-  font-size: 2rem;
   color: white;
-  font-weight: 900;
-  letter-spacing: 0.4rem;
   position: absolute;
   left: 50%;
   top: 290px;
   transform: translateX(-50%);
+}
+.arrow-header img {
+  transition: all 0.3s;
+}
+.arrow-header img:hover {
+  transform: scale(1.2);
 }
 /* ========================================= */
 /* ======================================== */
@@ -268,9 +273,137 @@ main a:active:before {
 
 /* ========================================= */
 /* ======================================== */
+/* =========== before footer ============= */
+/* ====================================== */
+/* ===================================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(50vw, auto));
+  grid-template-rows: repeat(2, minmax(25vh, auto));
+}
+
+.image1 {
+  background-image: url(./images/mobile/image-gallery-milkbottles.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image2 {
+  background: url(./images/mobile/image-gallery-orange.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image3 {
+  background-image: url(./images/mobile/image-gallery-cone.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.image4 {
+  background-image: url(./images/mobile/image-gallery-sugar-cubes.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.grid_item {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.image1:hover,
+.image2:hover,
+.image3:hover,
+.image4:hover {
+  opacity: 0.6;
+}
+
+/* ========================================= */
+/* ======================================== */
+/* ==== end of section before footer ===== */
+/* ====================================== */
+/* ===================================== */
+
+/* ========================================= */
+/* ======================================== */
+/* ===============  footer =============== */
+/* ====================================== */
+/* ===================================== */
+
+footer {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  background-color: #90d4c5;
+  text-align: center;
+  color: var(--darkModerateCyan);
+  font-family: "Barlow", sans-serif;
+}
+.footer_logo svg path {
+  fill: var(--darkModerateCyan);
+}
+
+footer .footer_nav ul,
+.footer_social_icons ul {
+  display: flex;
+  justify-content: center;
+}
+footer .footer_nav ul li ~ li,
+.footer_social_icons ul li ~ li {
+  margin: 0;
+  margin-left: 2.5rem;
+}
+.footer_social_icons ul li ~ li {
+  margin: 0;
+  margin-left: 1.5rem;
+}
+footer .footer_nav ul li a {
+  color: var(--darkModerateCyan);
+  transition: color 0.3s;
+}
+footer .footer_nav ul li a:hover,
+.footer_social_icons a i:hover {
+  color: var(--darkDesaturatedCyan);
+}
+footer .footer_nav ul li a:active,
+footer .footer_social_icons a i:active {
+  color: white;
+}
+.footer_nav {
+  margin: 2rem 0 0 0;
+}
+.footer_social_icons {
+  margin: 3rem 0 0 0;
+}
+.footer_social_icons a i {
+  color: var(--darkModerateCyan);
+  transition: color 0.3s;
+  font-size: 1.2rem;
+}
+
+.logo {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.logo:hover {
+  transform: scale(1.1);
+}
+/* ========================================= */
+/* ======================================== */
+/* ========== end of footer ============= */
+/* ====================================== */
+/* ===================================== */
+
+/* ========================================= */
+/* ======================================== */
 /* ========== media querries ============= */
 /* ====================================== */
 /* ===================================== */
+
 @media (max-width: 680px) {
   /* header */
   .navbar {
@@ -321,6 +454,10 @@ main a:active:before {
     text-transform: uppercase;
     padding: 1rem 1.6rem;
   }
+  .navbar li:last-child a:hover {
+    background-color: var(--veryDarkGrayishBlue);
+    color: var(--white);
+  }
   .navbar li:last-child a:active {
     background-color: var(--veryDarkDesaturatedBlue);
     color: var(--yellow);
@@ -359,12 +496,7 @@ main a:active:before {
   /* end of header */
 }
 
-@media (min-width: 500px) {
-  main {
-    grid-template-rows: 1fr 1fr 1fr 1fr 710px 710px;
-  }
-}
-@media (min-width: 680px) {
+@media (min-width: 681px) {
   /* header */
   header {
     padding: 2rem;
@@ -392,6 +524,9 @@ main a:active:before {
     border-radius: 3rem;
     text-transform: uppercase;
   }
+  .navbar li:last-child a:hover {
+    background-color: var(--softRed);
+  }
   .navbar li:last-child a:active {
     background-color: rgba(255, 255, 255, 0.274);
     color: white;
@@ -403,14 +538,14 @@ main a:active:before {
   /* main */
   main {
     width: 100%;
-    min-height: 500px;
+    /* min-height: 500px; */
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* grid-template-rows: repeat(3, 1fr); */
     grid-template-areas:
       "item2 item1"
       "item3 item4"
       "item5 item6";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(3, 1fr);
     text-align: center;
     font-family: "Barlow", sans-serif;
     font-weight: 600;
@@ -467,7 +602,24 @@ main a:active:before {
     max-width: 330px;
   }
 }
-
+@media (min-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(25vw, auto));
+    grid-template-rows: repeat(1, minmax(32vh, auto));
+  }
+  .image1 {
+    background-image: url(./images/desktop/image-gallery-milkbottles.jpg);
+  }
+  .image2 {
+    background-image: url(./images/desktop/image-gallery-orange.jpg);
+  }
+  .image3 {
+    background-image: url(./images/desktop/image-gallery-cone.jpg);
+  }
+  .image4 {
+    background-image: url(./images/desktop/image-gallery-sugarcubes.jpg);
+  }
+}
 @media (min-width: 1020px) {
   .testimonials {
     padding: 6rem 1rem;
@@ -487,14 +639,11 @@ main a:active:before {
     margin-bottom: 3rem;
     margin-top: 2rem;
   }
-}
-
-@media (min-width: 1825px) {
-  .main_items {
-    min-height: 750px;
+  .grid {
+    grid-template-columns: repeat(4, minmax(25vw, auto));
+    grid-template-rows: repeat(1, minmax(45vh, auto));
   }
 }
-
 @media (min-width: 1550px) {
   .clients {
     display: flex;
@@ -502,4 +651,18 @@ main a:active:before {
     justify-content: space-evenly;
     align-items: center;
   }
-} ;
+}
+@media (min-width: 1825px) {
+  .main_items {
+    min-height: 750px;
+  }
+}
+@media (min-width: 500px) {
+  main {
+    grid-template-rows: 1fr 1fr 710px;
+  }
+  .grid {
+    grid-template-columns: repeat(4, minmax(25vw, auto));
+    grid-template-rows: repeat(1, minmax(25vh, auto));
+  }
+}
