@@ -419,11 +419,11 @@ footer .footer_social_icons a i:active {
     justify-content: center;
     align-items: center;
     text-align: center;
-    visibility: hidden;
+    display: none;
     z-index: 10;
   }
   .visibility {
-    visibility: visible;
+    display: block;
   }
   .navbar::before {
     content: "";
@@ -472,6 +472,7 @@ footer .footer_social_icons a i:active {
   .arrow-header img {
     transform: scale(0.85);
   }
+
   .hamburger-icon img {
     transition: all 0.3s;
   }
@@ -493,9 +494,23 @@ footer .footer_social_icons a i:active {
   .item6 .details > * {
     margin-bottom: 2rem;
   }
+  main {
+    grid-template-rows: 1fr 1fr 1fr 1fr 710px 710px;
+  }
   /* end of header */
 }
-
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(25vw, auto));
+    grid-template-rows: repeat(1, minmax(25vh, auto));
+  }
+}
+@media (min-width: 500px) {
+  .grid {
+    grid-template-columns: repeat(4, minmax(25vw, auto));
+    grid-template-rows: repeat(1, minmax(25vh, auto));
+  }
+}
 @media (min-width: 681px) {
   /* header */
   header {
@@ -541,7 +556,7 @@ footer .footer_social_icons a i:active {
     /* min-height: 500px; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* grid-template-rows: repeat(3, 1fr); */
+    grid-template-rows: repeat(3, 1fr);
     grid-template-areas:
       "item2 item1"
       "item3 item4"
@@ -655,14 +670,5 @@ footer .footer_social_icons a i:active {
 @media (min-width: 1825px) {
   .main_items {
     min-height: 750px;
-  }
-}
-@media (min-width: 500px) {
-  main {
-    grid-template-rows: 1fr 1fr 710px;
-  }
-  .grid {
-    grid-template-columns: repeat(4, minmax(25vw, auto));
-    grid-template-rows: repeat(1, minmax(25vh, auto));
   }
 }
