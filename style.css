@@ -589,10 +589,20 @@ footer .footer_social_icons a i:active {
     text-align: center;
     display: none;
     z-index: 10;
+    animation-name: togglemenu;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
   }
-  .visibility {
-    display: block;
+  @keyframes togglemenu {
+    0% {
+      transform: translate(-50%, -50%);
+    }
+    100% {
+      transform: translate(-50%, 0%);
+    }
   }
+
   .navbar::before {
     content: "";
     width: 0;
@@ -600,8 +610,25 @@ footer .footer_social_icons a i:active {
     border-bottom: 40px solid rgb(255, 255, 255);
     border-left: 35px solid transparent;
     position: absolute;
-    top: -38px;
+    top: 0;
     right: 0;
+    animation-name: triagle;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-delay: 0.25s;
+  }
+  @keyframes triagle {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: -39px;
+    }
+  }
+
+  .visibility {
+    display: block;
   }
   li + li {
     margin-top: 1.5rem;
