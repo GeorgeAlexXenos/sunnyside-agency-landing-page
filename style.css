@@ -67,6 +67,37 @@ header {
   background-repeat: no-repeat;
   background-position: center;
 }
+.header-onscroll-down {
+  max-height: 93px;
+  background: linear-gradient(to top, rgb(36, 180, 236), rgb(30, 189, 252));
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  z-index: 2;
+  animation-name: header_anime;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+  animation-direction: alternate;
+}
+@keyframes header_anime {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+.display_none {
+  display: none;
+}
+
 .header-title {
   font-size: 2.2rem;
   color: white;
@@ -449,6 +480,7 @@ footer .footer_social_icons a i:active {
   .hamburger-icon {
     display: none;
   }
+
   /* end of header */
   /* main */
   main {
@@ -574,6 +606,9 @@ footer .footer_social_icons a i:active {
 }
 @media (max-width: 680px) {
   /* header */
+  .header-onscroll-down {
+    display: none !important;
+  }
   .navbar {
     padding: 1.5rem 0;
     background-color: white;
